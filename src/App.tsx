@@ -59,8 +59,8 @@ function App() {
   };
 
   const handleDeleteHistoryItem = (id: string) => {
-    deleteHistoryItem(id);  // Function to remove an item from local storage
-    setHistory(getHistory()); // Update the history after deletion
+    deleteHistoryItem(id); 
+    setHistory(getHistory()); 
   };
 
   return (
@@ -69,10 +69,8 @@ function App() {
 
       <main className="max-w-7xl mx-auto py-12 space-y-10">
         <div className="text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-blue-900 mb-3 leading-tight">
-            Gen Write Hub
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed mt-2">
+          
+          <p className="text-xl md:text-2xl text-black-700 max-w-3xl mx-auto leading-relaxed mt-2">
             Turning your thoughts into words, instantly.
           </p>
         </div>

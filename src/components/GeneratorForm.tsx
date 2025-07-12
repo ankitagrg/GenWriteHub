@@ -94,7 +94,7 @@ export const GeneratorForm: React.FC<GeneratorFormProps> = ({
           disabled={!isFormValid || isGenerating}
           className={`w-full py-4 px-8 rounded-xl font-bold text-lg transition-all duration-300 flex items-center justify-center space-x-3 transform hover:scale-105 shadow-lg hover:shadow-xl
             ${isFormValid && !isGenerating
-              ? 'bg-[#d0e7ff] hover:bg-[#a7c8e8] text-blue-900'  // Light blue color matching "Gen Write Hub"
+              ? 'bg-[#d0e7ff] hover:bg-[#a7c8e8] text-blue-900'  
               : 'bg-gray-300 text-gray-500 cursor-not-allowed transform-none'
             }
           `}

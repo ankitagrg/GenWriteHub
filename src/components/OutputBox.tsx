@@ -57,7 +57,7 @@ export const OutputBox: React.FC<OutputBoxProps> = ({
     <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200/50 hover:shadow-2xl transition-all duration-300">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center space-x-3">
-          <h2 className="text-2xl font-bold text-gray-900">Generated Content</h2>
+          <h2 className="text-2xl font-bold text-black-900">Generated Content</h2>
         </div>
         
         {content && !isGenerating && (
@@ -89,8 +89,8 @@ export const OutputBox: React.FC<OutputBoxProps> = ({
                 <div className="animate-spin rounded-full h-12 w-12 border-4 border-blue-200 border-t-blue-600 mx-auto"></div>
                 <Sparkles className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 text-blue-600 animate-pulse" />
               </div>
-              <p className="text-gray-700 font-medium text-lg">Generating your content...</p>
-              <p className="text-gray-500 text-sm mt-2">This usually takes just a few seconds</p>
+              <p className="text-black-700 font-medium text-lg">Generating your content...</p>
+              <p className="text-black-500 text-sm mt-2">This usually takes just a few seconds</p>
             </div>
           </div>
         )}
@@ -117,10 +117,10 @@ export const OutputBox: React.FC<OutputBoxProps> = ({
         {!content && !isGenerating && !error && (
           <div className="bg-gradient-to-br from-gray-50 to-blue-50/30 rounded-2xl p-12 text-center border-2 border-dashed border-gray-300">
             <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
-              <FileText className="w-8 h-8 text-gray-400" />
+              <FileText className="w-8 h-8 text-black-400" />
             </div>
-            <p className="text-gray-600 font-medium text-lg">Your generated content will appear here...</p>
-            <p className="text-gray-500 text-sm mt-2">Fill out the form and click "Generate Content" to get started</p>
+            <p className="text-black-600 font-medium text-lg">Your generated content will appear here...</p>
+            <p className="text-black-500 text-sm mt-2">Fill out the form and click "Generate Content" to get started</p>
           </div>
         )}
       </div>

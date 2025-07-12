@@ -46,7 +46,7 @@ export const HistoryModal: React.FC<HistoryModalProps> = ({
       <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm overflow-y-auto">
         <div className="flex items-center justify-center min-h-screen px-4 py-10">
           <div className="w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden">
-            
+           
 <div className="bg-blue-900 px-8 py-6">
   <div className="flex items-center justify-between">
     <div className="flex items-center space-x-3">
