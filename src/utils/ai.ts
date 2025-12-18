@@ -3,34 +3,27 @@ import { GenerationInput } from '../types';
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
 
 class AIService {
-  
+
   private removeMarkdown(text: string): string {
-    // Remove bold markdown (**bold**) and other common markdown formats
-    return text.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/_/g, '');  // Remove _italic_ too if needed
+    return text.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/_/g, '');
   }
 
-  async generateContent(input: GenerationInput): Promise<string> {
+  async generateContent(input: GenerationInput, apiKey?: string): Promise<string> {
     try {
-      // Send the request to the backend API
       const response = await fetch(`${BASE_URL}/api/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ input }),
+        body: JSON.stringify({ input, apiKey }),
       });
 
       if (!response.ok) {
-        const errorMessage = await response.text(); 
+        const errorMessage = await response.text();
         throw new Error(`Failed to generate content: ${errorMessage || response.statusText}`);
       }
-
       const data = await response.json();
-
-     
       if (!data.content) {
         throw new Error('Invalid response structure: Missing content.');
       }
-
-      // Clean the content before returning (remove any markdown formatting)
       const cleanContent = this.removeMarkdown(data.content);
 
       return cleanContent;
