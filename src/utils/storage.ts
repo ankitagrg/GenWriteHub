@@ -1,6 +1,6 @@
 import { GeneratedContent } from '../types';
 
-const STORAGE_KEY = 'ai-content-history';  // Use the same key consistently
+const STORAGE_KEY = 'ai-content-history';  
 
 export const saveToHistory = (content: GeneratedContent): void => {
   try {
@@ -31,7 +31,7 @@ export const clearHistory = (): void => {
 };
 
 export const deleteHistoryItem = (id: string) => {
-  const history = getHistory();  // Get all history items
+  const history = getHistory(); 
   const updatedHistory = history.filter(item => item.id !== id);  
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedHistory));  // Save updated history back to local storage
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedHistory)); 
 };
