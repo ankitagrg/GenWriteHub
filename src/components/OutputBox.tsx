@@ -41,8 +41,6 @@ export const OutputBox: React.FC<OutputBoxProps> = ({
   const handleSave = () => {
     onSave?.();
   };
-
-
   const renderContentWithBoldTopic = (content: string) => {
     const lines = content.split('\n');
 
