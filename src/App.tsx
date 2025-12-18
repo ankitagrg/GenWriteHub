@@ -12,7 +12,7 @@ import { saveToHistory, getHistory, clearHistory, deleteHistoryItem } from './ut
 
 function App() {
   const [input, setInput] = useState<GenerationInput>({
-    contentType: 'blog', 
+    contentType: 'blog',
     topic: '',
     audience: '',
     tone: '',
@@ -37,7 +37,7 @@ function App() {
     }
 
     try {
-      const generatedContent = await generateContent(input);
+      const generatedContent = await generateContent(input, apiKey);
       const historyItem: GeneratedContent = {
         id: Date.now().toString(),
         timestamp: Date.now(),
@@ -59,8 +59,8 @@ function App() {
   };
 
   const handleDeleteHistoryItem = (id: string) => {
-    deleteHistoryItem(id); 
-    setHistory(getHistory()); 
+    deleteHistoryItem(id);
+    setHistory(getHistory());
   };
 
   return (
@@ -69,7 +69,7 @@ function App() {
 
       <main className="max-w-7xl mx-auto py-12 space-y-10">
         <div className="text-center">
-          
+
           <p className="text-xl md:text-2xl text-black-700 max-w-3xl mx-auto leading-relaxed mt-2">
             Turning your thoughts into words, instantly.
           </p>
