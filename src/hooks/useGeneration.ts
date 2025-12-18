@@ -9,11 +9,11 @@ export const useGeneration = () => {
     error: null,
   });
 
-  const generateContent = useCallback(async (input: GenerationInput) => {
+  const generateContent = useCallback(async (input: GenerationInput, apiKey?: string) => {
     setState(prev => ({ ...prev, isGenerating: true, error: null }));
 
     try {
-      const content = await aiService.generateContent(input);
+      const content = await aiService.generateContent(input, apiKey);
       setState(prev => ({ ...prev, content, isGenerating: false }));
       return content;
     } catch (error) {
