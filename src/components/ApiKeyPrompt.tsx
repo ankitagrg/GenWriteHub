@@ -13,17 +13,12 @@ export const ApiKeyPrompt: React.FC<ApiKeyPromptProps> = ({ onClose }) => {
 
   const handleSaveApiKey = async () => {
     if (!apiKey.trim()) return;
-
     setIsValidating(true);
     setValidationResult(null);
-
-   
     setTimeout(() => {
       if (apiKey.startsWith('gsk_')) {
         setValidationResult('success');
         localStorage.setItem('groq_api_key', apiKey);
-
-        // Delay reload so user sees success message
         setTimeout(() => {
           window.location.reload();
         }, 1500);
