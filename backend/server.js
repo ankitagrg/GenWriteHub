@@ -9,13 +9,16 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
-
-// Parse incoming JSON requests
 app.use(express.json());
 
 app.post('/api/generate', async (req, res) => {
-  const { input } = req.body;
+  const { input, apiKey } = req.body;
 
+  const finalApiKey = apiKey || process.env.GROQ_API_KEY;
+
+  if (!finalApiKey) {
+    return res.status(401).json({ error: 'Missing API Key' });
+  }
  
   if (!input?.topic || !input?.tone || !input?.audience) {
     return res.status(400).json({ error: 'Missing required fields in input' });
@@ -23,8 +26,8 @@ app.post('/api/generate', async (req, res) => {
 
   try {
     const model = new ChatGroq({
-      apiKey: process.env.GROQ_API_KEY,
-      model: 'llama3-8b-8192',
+      apiKey: finalApiKey,
+      model: 'llama-3.1-8b-instant',
       temperature: 0.7,
     });
 
