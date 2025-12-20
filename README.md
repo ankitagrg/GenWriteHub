@@ -1,6 +1,6 @@
 # ✨ Gen Write Hub
 
-**Gen Write Hub** is an AI-powered content generation platform that helps you quickly create high-quality content on any given topic. Powered by Groq’s **LLaMA 3** model, the app allows you to generate content based on your topic, tone, audience, and keywords.
+**GenWriteHub** is a sophisticated AI-powered content generation platform designed to streamline the creative writing process. It allows users to generate high-quality, tailored content by specifying parameters such as topic, target audience, tone of voice, and relevant keywords.
 
 ---
 
@@ -24,4 +24,6 @@
 | **Icons**    | Lucide React                              |
 
 ---
+
+
 
